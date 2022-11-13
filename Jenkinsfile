@@ -12,14 +12,13 @@ environment {
         scannerHome = tool 'SonarQube'
     }
 
-    stages {
-        stage('get Frontend Backend') {
+
+    stage('Get Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/adamb05/Frontend.git'
-                git branch: 'main', url: 'https://github.com/adamb05/Backend.git'
+                // Get some code from a GitHub repository
+                checkout scm
             }
         }
-    
     
        stage('install requirements.txt') {
             steps {
